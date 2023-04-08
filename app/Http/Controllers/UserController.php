@@ -24,4 +24,29 @@ class UserController extends Controller
 
         return redirect('/');
     }
+
+    public function loginPage(){
+        return view('login');
+    }
+
+    public function login(Request $request)
+    {
+        $data = User::where('email', $request->email)->firstOrFail();
+        if ($data->email == $request->email){
+                $syarat = $request->validate([
+                    'email' => ['required', 'email'],
+                    'password' => ['required'],
+                ]);
+                if (Auth::attempt($syarat)) {
+                    $request->session()->regenerate();
+                    if($data->role == 'user'){
+                        $data->status = 'logged in';
+                        $data->save();
+                        return redirect()->intended('/');
+                    }
+                }
+        }else{
+            return redirect('/login');
+        }
+    }
 }
