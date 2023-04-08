@@ -43,6 +43,10 @@ class UserController extends Controller
                         $data->status = 'logged in';
                         $data->save();
                         return redirect()->intended('/');
+                    }elseif($data->role == 'admin'){
+                        $data->status = 'logged in';
+                        $data->save();
+                        return redirect('/admin');
                     }
                 }
         }else{
