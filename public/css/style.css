@@ -118,6 +118,94 @@
 
 /* --------------------------------NAVBAR --------------------------------*/
 
+/* --------------------------------NAVBAR2 --------------------------------*/
+.container2 {
+    width: 90%;
+    margin-inline: auto;
+}
+
+.navbar2 {
+    padding: 20px 0 20px 0;
+    position: fixed;
+    width: 100%;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    z-index: 9999;
+    background-color: #080717;
+}
+
+.navbar2 .box-navbar2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar2 .box-navbar2 .logo2 img {
+    width: 24px;
+    height: auto;
+}
+
+.navbar2 .box-navbar2 .menu2 {
+    display: flex;
+    column-gap: 10px;
+}
+
+.navbar2 .box-navbar2 .menu2 li {
+    list-style-type: none;
+}
+
+.navbar2 .box-navbar2 .menu2 li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px 10px 15px;
+}
+
+.navbar2 .box-navbar2 .menu2 li a:hover {
+    background-color: white;
+    color: #080717;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.searchnav {
+    background-color: #080717;
+    color: white;
+    border-color: white;
+    width: 40vmax;
+    height: 2.6vmax;
+    border-radius: 20px;
+}
+
+.searchnav:hover {
+    background-color: white;
+    color: #080717;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.btn.btnlogin {
+    background-color: white;
+    color: #080717;
+}
+
+.btn.btnlogin:hover {
+    background-color: white;
+    color: #080717;
+}
+
+/* --------------------------------NAVBAR2 --------------------------------*/
+
 /* --------------------------------CAROUESEL --------------------------------*/
 .bg1 {
     width: 100%;
@@ -386,3 +474,653 @@
 }
 
 /* -------------------------------- BG3 --------------------------------*/
+
+/* -------------------------------- BG4 --------------------------------*/
+.bg4 {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.655),
+            rgba(0, 0, 0, 0.096)
+        ),
+        url("/assets/homelogin.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    scroll-snap-align: center;
+}
+
+.bg4 .card {
+    background-color: #d9d9d9;
+    position: absolute;
+    border-radius: 50px;
+    width: 27%;
+    height: 85%;
+    margin-left: 60%;
+    margin-top: 5%;
+    box-shadow: 8px 8px 10px rgb(39, 38, 38);
+}
+
+.cardheader img {
+    width: 3vh;
+    height: auto;
+    margin-top: 20px;
+}
+
+.cardheader h1 {
+    font-size: 20px;
+    width: 300px;
+    top: 20px;
+}
+
+.cardheader p {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    font-weight: lighter;
+    color: #757575;
+}
+
+.label {
+    display: grid;
+    font-weight: normal;
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-left: 95px;
+}
+
+.kotakform {
+    margin-top: 1px;
+    margin-left: 90px;
+    width: 250px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 50px;
+    border-style: hidden;
+}
+
+.continue {
+    margin-top: 20px;
+    margin-left: 90px;
+    width: 250px;
+    height: 30px;
+    background-color: #001aff;
+    font-weight: 500;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.login {
+    margin-top: -20px;
+    margin-left: 90px;
+    width: 250px;
+    height: 30px;
+    background-color: #ff0000;
+    font-weight: 500;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* -------------------------------- BG4 --------------------------------*/
+
+/* -------------------------------- FORYOU --------------------------------*/
+.bg5 {
+    display: flex;
+    background-color: rgb(255, 233, 208);
+    color: #080717;
+}
+
+.pilihan {
+    margin: 8vh auto 2vh 40px;
+    vertical-align: middle;
+    height: fit-content;
+    font-size: 1.2vmax;
+    font-weight: 600;
+}
+
+.btnlokasi {
+    position: absolute;
+    padding: 0px 0.4% 0.4% 0px;
+    font-weight: 700;
+    font-size: 1.1vmax;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin-left: 1vh;
+    margin-top: 0vh;
+    text-decoration: none;
+}
+
+.btnlokasi:hover {
+    color: black;
+    background-color: #956c2665;
+    border-radius: 40px;
+}
+
+.tabel {
+    background-color: #f8d6b0;
+    box-shadow: 8px 8px 10px grey;
+    border-radius: 10px;
+    padding: 4vh;
+    min-height: 77vh;
+}
+
+.rekomen {
+    width: 20vh;
+    font-size: 1.2vmax;
+    font-weight: bold;
+}
+
+.artikel {
+    width: 100%;
+    height: auto;
+}
+
+.artikel img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.addiklan_h1 {
+    font-size: 2vmax;
+    font-weight: bold;
+    text-align: center;
+}
+
+.addiklan.cards {
+    background-color: #61616100;
+    border: none;
+    width: 300px;
+    height: 60vh;
+    border-radius: 40px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.scrollBar {
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.addiklan .card .card-title {
+    font-size: 2vmax;
+    font-weight: bold;
+    width: 15vmax;
+    color: white;
+}
+
+.addiklan.card-title {
+    font-size: 2vmax;
+    font-weight: bold;
+    width: 15vmax;
+    color: white;
+}
+
+/* -------------------------------- FORYOU --------------------------------*/
+
+/* -------------------------------- DETAIL CAFE --------------------------------*/
+.detailcafe {
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+    display: flex;
+    background-color: #ffe9d0;
+    color: #080717;
+}
+
+.carouselimg {
+    width: 100%;
+    height: 80vh;
+    border-radius: 10px;
+    object-position: center;
+}
+
+.card.card-review {
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.scrollY {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+img.imgreview {
+    border-radius: 10px;
+    padding-right: 5px;
+    width: 60px;
+    height: 55px;
+}
+
+img.imgreview:hover {
+    cursor: pointer;
+}
+
+.round .align-self-start {
+    border-radius: 100%;
+    width: 45px;
+    height: 40px;
+}
+
+.media .comment {
+    background: #f4f4f4;
+    border: none;
+    border-radius: 10px;
+}
+
+h6.user {
+    color: #5c5c5c;
+    font-size: 15px !important;
+    padding-left: 15px !important;
+    margin-bottom: 0;
+}
+
+h6.user:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+p.text {
+    margin-bottom: 0;
+    color: #8a8a8a !important;
+    font-size: 14px;
+}
+
+.ml-auto {
+    margin-right: 10px;
+}
+
+p .reply {
+    color: #5c5c5c;
+    font-size: 15px;
+}
+
+@media screen and (min-width: 576px) {
+    .comment {
+        width: 470px !important;
+    }
+}
+
+.addkomen {
+    bottom: 0;
+}
+
+.addkomen .btn-komen {
+    background-color: #cd8989;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete-texture.png");
+    display: flex;
+    flex-wrap: wrap;
+    height: 25vh;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.rating {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: row-reverse;
+    height: 150px;
+    position: relative;
+}
+
+.rating > input {
+    display: none;
+}
+
+.rating > label {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-top: auto;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 76%;
+    transition: 0.3s;
+}
+
+.rating > input:checked ~ label,
+.rating > input:checked ~ label ~ label {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+}
+
+.rating > input:not(:checked) ~ label:hover,
+.rating > input:not(:checked) ~ label:hover ~ label {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+}
+
+.emoji-wrapper {
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.emoji-wrapper:before,
+.emoji-wrapper:after {
+    content: "";
+    height: 15px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+.emoji-wrapper:before {
+    top: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 35%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.emoji-wrapper:after {
+    bottom: 0;
+    background: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 35%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.emoji {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.emoji > svg {
+    margin: 15px 0;
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+}
+
+#rating-1:checked ~ .emoji-wrapper > .emoji {
+    transform: translateY(-100px);
+}
+
+#rating-2:checked ~ .emoji-wrapper > .emoji {
+    transform: translateY(-200px);
+}
+
+#rating-3:checked ~ .emoji-wrapper > .emoji {
+    transform: translateY(-300px);
+}
+
+#rating-4:checked ~ .emoji-wrapper > .emoji {
+    transform: translateY(-400px);
+}
+
+#rating-5:checked ~ .emoji-wrapper > .emoji {
+    transform: translateY(-500px);
+}
+
+.feedback {
+    max-width: 360px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.viewmore {
+    font-size: 1.1vmax;
+    font-weight: 600;
+    width: 8vmax;
+    color: #080717;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    background-color: #ffe9d0;
+}
+
+.viewmore:hover {
+    color: black;
+    background-color: #ffcb91;
+}
+
+/* -------------------------------- DETAIL CAFE --------------------------------*/
+
+/* -------------------------------- EXPLORE --------------------------------*/
+.bg6 {
+    display: flex;
+    background-color: #ffffff;
+    color: #080717;
+}
+
+.btnexp {
+    font-size: 1.1vmax;
+    font-weight: 600;
+    width: 8vmax;
+    color: #080717;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.btnexp:hover {
+    color: black;
+    background-color: wheat;
+}
+
+.expiklan_h1 {
+    font-size: 2vmax;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.expiklan.expcards {
+    background-color: #61616100;
+    border: none;
+    width: 300px;
+    height: 60vh;
+    border-radius: 40px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.expiklan .card .card-title {
+    font-size: 2vmax;
+    font-weight: bold;
+    width: 15vmax;
+    color: white;
+}
+
+.expiklan.card-title {
+    font-size: 2vmax;
+    font-weight: bold;
+    width: 15vmax;
+    color: white;
+}
+
+/* -------------------------------- EXPLORE --------------------------------*/
+
+/* -------------------------------- FORMIKLAN --------------------------------*/
+.formiklan {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(
+            rgba(84, 83, 83, 0.285),
+            rgba(0, 0, 0, 0.716)
+        ),
+        url("/img/bgkopi.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    scroll-snap-align: center;
+}
+
+/* -------------------------------- FORMIKLAN --------------------------------*/
+
+/* -------------------------------- like_wishlist --------------------------------*/
+.like_wishlist {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* -------------------------------- like_wishlist --------------------------------*/
+
+/* -------------------------------- PROFILE --------------------------------*/
+.profile {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+/*
+.profile-pic {
+    color: transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .profile-pic input {
+    display: none;
+  }
+  .profile-pic img {
+    position: absolute;
+    object-fit: cover;
+    width: 180px;
+    height: 180px;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
+    border-radius: 100px;
+    z-index: 0;
+  }
+  .profile-pic .-label {
+    cursor: pointer;
+    height: 180px;
+    width: 180px;
+  }
+  .profile-pic:hover .-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    color: #fafafa;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 100px;
+    margin-bottom: 0;
+  }
+  .profile-pic span {
+    display: inline-flex;
+    padding: 0.2em;
+    height: 2em;
+  } */
+
+.profile-pic {
+    width: 200px;
+    max-height: 200px;
+    display: inline-block;
+}
+
+.file-upload {
+    display: none;
+}
+.circle {
+    border-radius: 100%;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    object-fit: cover;
+}
+.circle img {
+    max-width: 100%;
+    height: auto;
+}
+.p-image {
+    margin-top: -5vh;
+    margin-left: 13vw;
+    color: #666666;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.p-image:hover {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.upload-button {
+    font-size: 2vmax;
+}
+
+.upload-button:hover {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: #999;
+}
+/* -------------------------------- PROFILE --------------------------------*/
+
+/* -------------------------------- ADMIN --------------------------------*/
+.administrator {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(98, 94, 94);
+}
+
+.tempat {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.tempat img {
+    max-width: 100%;
+    height: auto;
+}
+
+.ava {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+#btn-like.btn-light:hover {
+    background-color: #ff0000;
+}
+#btn-unlike.btn-danger:hover {
+    background-color: #e5e5e5;
+}
+/* -------------------------------- ADMIN --------------------------------*/

@@ -39,7 +39,7 @@
                         {{-- <li><a href="explore">Explore</a></li> --}}
                         <li><a href="/login">Sign In</a></li>
                         <li class="active">
-                            <a href="/regis">Register</a>
+                            <a href="/register">Register</a>
                         </li>
                     </ul>
                     <i class="fa-solid fa-bars menu-bar"></i>
