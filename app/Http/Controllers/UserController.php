@@ -49,4 +49,12 @@ class UserController extends Controller
             return redirect('/login');
         }
     }
+
+    public function logout($id){
+        $user = User::find($id);
+        $user->status ='not logged in';
+        $user->save();
+        Auth::logout();
+        return redirect('/');
+    }
 }
