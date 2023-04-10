@@ -39,5 +39,7 @@ Route::post('/addAdmin',[UserController::class,'storeAdmin']);
 
 // Iklan
 Route::post('/iklanAdmin',[RestoController::class,'store']);
+Route::get('/foryou',[RestoController::class, 'index']);
+Route::get('/foryou/{district}',[RestoController::class, 'indexDistrict']);
 
 

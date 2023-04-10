@@ -14,7 +14,21 @@ class RestoController extends Controller
      */
     public function index()
     {
-        //
+        $district = 'All Places in Bandung';
+        $resto = resto::where('status', 'approved')->get();
+        $rekomen = resto::where('rekomen','ya')->get();
+        $url = "https://kanglerian.github.io/api-wilayah-indonesia/api/districts/3273.json";
+        $data = json_decode(file_get_contents($url), true);
+        return view('foryou', compact('resto','district','rekomen','data'));
+    }
+
+    public function indexDistrict($district)
+    {
+        $resto = resto::where('district','=', $district)->get();
+        $rekomen = resto::where('rekomen','ya')->get();
+        $url = "https://kanglerian.github.io/api-wilayah-indonesia/api/districts/3273.json";
+        $data = json_decode(file_get_contents($url), true);
+        return view('foryou', compact('resto','district','rekomen','data'));
     }
 
     /**
