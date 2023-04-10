@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RestoController;
 use App\Models\User;
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +30,14 @@ Route::put('/logout/{id}', [UserController::class, 'logout']);
 // Admin
 Route::get('/admin', function () {
     $user = User::where('status', 'logged in')->get();
-    return view('adminPage',compact('user'));
+    $url = "https://kanglerian.github.io/api-wilayah-indonesia/api/districts/3273.json";
+    $data = json_decode(file_get_contents($url), true);
+    return view('adminPage',compact('user','data'));
 });
 Route::post('/addAdmin',[UserController::class,'storeAdmin']);
+
+
+// Iklan
+Route::post('/iklanAdmin',[RestoController::class,'store']);
 
 

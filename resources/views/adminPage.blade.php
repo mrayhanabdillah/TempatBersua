@@ -221,9 +221,9 @@
                                             <select name="kawasan" class="form-select"
                                                 aria-label="Default select example">
                                                 <option selected hidden disabled>Choose District</option>
-                                                <option value="Buahbatu">Buahbatu</option>
-                                                <option value="Dipati Ukur">Dipati Ukur</option>
-                                                <option value="Riau">Riau</option>
+                                                @foreach ($data as $i)
+                                                    <option value="{{ $i['name'] }}">{{ $i['name'] }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="mb-3">
