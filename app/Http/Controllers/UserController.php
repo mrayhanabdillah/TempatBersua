@@ -25,6 +25,18 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function storeAdmin(Request $request){
+        $data = new User();
+        $data->username = $request->username;
+        $data->email = $request->email;
+        $data->password = Hash::make($request->password);
+        $data->role = "admin";
+        $data->status = "not logged in";
+        $data->save();
+
+        return redirect('/admin');
+    }
+
     public function loginPage(){
         return view('login');
     }

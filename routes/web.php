@@ -30,5 +30,6 @@ Route::get('/admin', function () {
     $user = User::where('status', 'logged in')->get();
     return view('adminPage',compact('user'));
 });
+Route::post('/addAdmin',[UserController::class,'storeAdmin']);
 
 

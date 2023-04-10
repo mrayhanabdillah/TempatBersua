@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             'username'=>'TempatBersua',
             'email'=>'tempatbersua@gmail.com',
             'password'=>bcrypt('123'),
-            'role'=>'admin',
+            'role'=>'superadmin',
             'status'=>'not logged in',                                                                                                  
             'foto'=>'logo.png',
         ]);

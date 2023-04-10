@@ -40,11 +40,58 @@
                         <a href="explore"><img src="{{ asset('assets/logo.png') }}"></a>
                     </div>
                     <ul class="menu2">
-                        <li><a href="foryou">For You</a></li>
-                        <li><a href="like">Like</a></li>
-                        <li><a href="explore">Explore</a></li>
-                        </li>
+                        <li><a class="nav-link" href="foryou">For You</a></li>
+                        <li><a class="nav-link" href="like">Like</a></li>
+                        <li><a class="nav-link" href="explore">Explore</a></li>
+                        @if (auth()->user()->role == 'superadmin')
+                            <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#addAdmin">Add
+                                    Admin</a></li>
+                        @endif
                     </ul>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="addAdmin" tabindex="-1" aria-labelledby="addAdmin" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addAdmin">Add Admin</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <form method="POST" action="/addAdmin">
+                                    @csrf
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">Username</label>
+                                            <input type="text" class="form-control" id="username"
+                                                placeholder="example123" name="username">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                            <input type="email" name="email" class="form-control"
+                                                id="exampleFormControlInput1" placeholder="name@example.com">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Password</label>
+                                            <input type="password" name="password" class="form-control"
+                                                id="exampleFormControlInput1" name="username">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Password
+                                                Confirmation</label>
+                                            <input type="password" name="password_con" class="form-control"
+                                                id="exampleFormControlInput1" name="username">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Tutup</button>
+                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <div class="dropdown">
@@ -157,7 +204,8 @@
                         <div class="col">
                             <h1 class="mt-5" align="center">Advertise</h1>
                             <hr style="border-top: 3px solid black;">
-                            <form action="/iklanAdmin" method="POST" enctype="multipart/form-data" class="form_iklan">
+                            <form action="/iklanAdmin" method="POST" enctype="multipart/form-data"
+                                class="form_iklan">
                                 @csrf
                                 <div class="card mx-4 " style="height: 105vh;">
                                     <div class="card-body scrollY">
