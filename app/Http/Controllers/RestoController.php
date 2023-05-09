@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\resto;
+use App\Models\like;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RestoController extends Controller
 {
@@ -157,8 +159,8 @@ class RestoController extends Controller
     }
 
     public function showDetail(Request $request, $id){
-        $resto = Resto::all();
-        $detailResto = Resto::find($id);
+        $resto = resto::all();
+        $detailResto = resto::find($id);
         return view('detailResto',compact('detailResto','resto'));
     }
 
@@ -263,6 +265,33 @@ class RestoController extends Controller
     {
         $resto = Resto::find($id);
         $resto->delete();
+
+        return back();
+    }
+
+    public function showLike()
+    {
+        $resto = like::where('user_id',Auth::user()->id)->get();
+        return view('like',compact('resto'));
+    }
+
+    public function like($id)
+    {
+
+        $like = new like();
+        $like->user_id = Auth::user()->id;
+        $like->resto_id = $id;
+        $like->liked = 'yes';
+        $like->save();
+
+        return redirect('/detail/'.$id);
+
+    }
+
+    public function unlike($id)
+    {
+        $like = like::find($id);
+        $like->delete();
 
         return back();
     }

@@ -57,6 +57,9 @@ Route::delete('/deleteResto/{id}',[RestoController::class,'deleteResto']);
 // Rsto
 Route::get('/detail/{id}', [RestoController::class, 'showDetail']);
 Route::get('/explore', [RestoController::class, 'show']);
+Route::get('/like', [RestoController::class, 'showLike']);
+Route::post('/liked/{id}',[RestoController::class, 'like']);
+Route::delete('/unliked/{id}',[RestoController::class, 'unlike']);
 
 
 
