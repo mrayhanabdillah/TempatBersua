@@ -27,6 +27,8 @@ Route::post('/register',[UserController::class,'store']);
 Route::get('/login',[UserController::class,'loginPage']);
 Route::post('/login',[UserController::class,'login']);
 Route::put('/logout/{id}', [UserController::class, 'logout']);
+Route::get('/profile',[UserController::class,'profile']);
+Route::put('/update/{id}', [UserController::class, 'update']);
 
 // Admin
 Route::get('/admin', function () {

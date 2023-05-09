@@ -73,4 +73,28 @@ class UserController extends Controller
         Auth::logout();
         return redirect('/');
     }
+
+    public function update(Request $request,$id)
+    {
+        $user = User::find($id);
+        $poto = "";
+        if ($request->foto) {
+            $poto = $request->foto->getClientOriginalName() . '-' . time()
+                . '.' . $request->foto->extension();
+            $request->foto->move(public_path('ava'), $poto);
+        }elseif ($request -> foto == null){
+            $poto = $user->foto;
+        }
+        if ($request->pw == $request->pwbaru){
+            $user->username=$request->username;
+            $user->foto=$poto;
+            $user->save();
+        }
+
+        return redirect('/foryou');
+    }
+
+    public function profile (){
+        return view('profile');
+    }
 }
