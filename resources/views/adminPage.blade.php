@@ -415,7 +415,29 @@
                     </thead>
 
                     <tbody>
-
+                        @foreach ($waiting as $u)
+                            <tr>
+                                <th>{{ $u->namaresto }}</th>
+                                <th>{{ $u->address }}</th>
+                                <th>{{ $u->open }} - {{ $u->close }}</th>
+                                <th>{{ $u->price }} - {{ $u->upto }}</th>
+                                <th>{{ $u->category }}</th>
+                                <th>
+                                    <center>
+                                        <form action="/ubahStatusPost/{{ $u->id }}" method="post">
+                                            @csrf
+                                            <button type="submit"
+                                                class="btn btn-success text-white mx-2">Post</button>
+                                        </form>
+                                        <form action="/ubahStatusDecline/{{ $u->id }}" method="post">
+                                            @csrf
+                                            <button type="submit"
+                                                class="btn btn-danger text-white mx-2">Decline</button>
+                                        </form>
+                                    </center>
+                                </th>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -81,9 +81,9 @@
                         <div class="row row-cols-1 row-cols-md-4">
 
                             <div class="col">
-                                <a href="/formiklan" style="text-decoration: none;">
+                                <a href="/formIklan" style="text-decoration: none;">
                                     <div class="addiklan cards ads"
-                                        style="background-image:linear-gradient(rgba(84, 83, 83, 0.425), rgba(69, 66, 66, 0.814)), url({{ asset('img/addiklan.png') }});">
+                                        style="background-image:linear-gradient(rgba(84, 83, 83, 0.425), rgba(69, 66, 66, 0.814)), url({{ asset('assets/addiklan.png') }});">
                                         {{-- <center>
                                         <h5 class="addiklan card-title pt-2" align="center" style="color: rgba(255, 255, 255, 0.488)">Sekala Coffe</h5>
                                     </center> --}}
@@ -93,7 +93,7 @@
 
                             <div class="col">
                                 <div class="addiklan cards"
-                                    style="background-image: linear-gradient(rgba(63, 60, 60, 0.829), rgba(0, 0, 0, 0)), url({{ asset('img/tokjaw.jpg') }});">
+                                    style="background-image: linear-gradient(rgba(63, 60, 60, 0.829), rgba(0, 0, 0, 0)), url({{ asset('assets/tokjaw.jpg') }});">
                                     <center>
                                         <h5 class="addiklan card-title pt-2" align="center">Kopi Toko Jawa</h5>
                                     </center>
@@ -102,7 +102,7 @@
 
                             <div class="col">
                                 <div class="addiklan cards"
-                                    style="background-image: linear-gradient(rgba(63, 60, 60, 0.829), rgba(0, 0, 0, 0)), url({{ asset('img/koffiebraga.jpg') }});">
+                                    style="background-image: linear-gradient(rgba(63, 60, 60, 0.829), rgba(0, 0, 0, 0)), url({{ asset('assets/koffiebraga.jpg') }});">
                                     <center>
                                         <h5 class="addiklan card-title pt-2" align="center">Koffie Braga</h5>
                                     </center>
@@ -111,7 +111,7 @@
 
                             <div class="col">
                                 <div class="addiklan cards"
-                                    style="background-image: linear-gradient(rgba(63, 60, 60, 0.829), rgba(0, 0, 0, 0)), url({{ asset('img/yellowtruck.jpg') }});">
+                                    style="background-image: linear-gradient(rgba(63, 60, 60, 0.829), rgba(0, 0, 0, 0)), url({{ asset('assets/yellowtruck.jpg') }});">
                                     <center>
                                         <h5 class="addiklan card-title pt-2" align="center">Yellow Truck</h5>
                                     </center>

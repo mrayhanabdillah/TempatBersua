@@ -983,7 +983,7 @@ p .reply {
             rgba(84, 83, 83, 0.285),
             rgba(0, 0, 0, 0.716)
         ),
-        url("/img/bgkopi.jpg");
+        url("/assets/bgkopi.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

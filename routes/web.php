@@ -32,10 +32,11 @@ Route::put('/logout/{id}', [UserController::class, 'logout']);
 Route::get('/admin', function () {
     $user = User::where('status', 'logged in')->get();
     $resto = resto::where('status', 'approved')->get();
+    $waiting = Resto::where('status', 'waiting')->get();
     $url = "https://kanglerian.github.io/api-wilayah-indonesia/api/districts/3273.json";
     $data = json_decode(file_get_contents($url), true);
 
-    return view('adminPage',compact('user','data','resto'));
+    return view('adminPage',compact('user','data','resto','waiting'));
 });
 Route::post('/addAdmin',[UserController::class,'storeAdmin']);
 
@@ -45,5 +46,11 @@ Route::post('/iklanAdmin',[RestoController::class,'store']);
 Route::post('/updateResto/{id}',[RestoController::class,'update']);
 Route::get('/foryou',[RestoController::class, 'index']);
 Route::get('/foryou/{district}',[RestoController::class, 'indexDistrict']);
+Route::get('/formIklan',[RestoController::class, 'formIklan']);
+Route::post('/userIklan',[RestoController::class, 'storeUser']);
+Route::post('/ubahStatusPost/{id}', [RestoController::class,'ubahStatusPost']);
+Route::post('/ubahStatusDecline/{id}', [RestoController::class,'ubahStatusDecline']);
+Route::delete('/deleteResto/{id}',[RestoController::class,'deleteResto']);
+
 
 
