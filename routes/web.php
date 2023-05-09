@@ -56,6 +56,7 @@ Route::delete('/deleteResto/{id}',[RestoController::class,'deleteResto']);
 
 // Rsto
 Route::get('/detail/{id}', [RestoController::class, 'showDetail']);
+Route::get('/explore', [RestoController::class, 'show']);
 
 
 

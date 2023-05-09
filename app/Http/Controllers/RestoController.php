@@ -150,7 +150,10 @@ class RestoController extends Controller
      */
     public function show(resto $resto)
     {
-        //
+        $iklanBerbayar = Resto::where('category', 'berbayar')->where('status','approved')->get();
+        $iklan = Resto::where('status', 'approved')->get();
+        // $iklan = Resto::where('status', 'waiting')->get();
+        return view('explore',compact('iklanBerbayar','iklan'));
     }
 
     public function showDetail(Request $request, $id){
