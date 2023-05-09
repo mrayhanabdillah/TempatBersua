@@ -133,7 +133,231 @@
                         </div>
                         <div class="scrollY" style="height: 65vh;">
                             <div class="row row-cols-1 row-cols-md-4">
+                                @foreach ($resto as $dataresto)
+                                    <div class="col px-3">
+                                        <a href="#" style="text-decoration: none;">
+                                            <div class="card mb-3" style="height: 20rem;"
+                                                style="border-radius:10px; box-shadow: -5px 5px 10px rgba(128, 128, 128, 0.63);">
+                                                <img src="{{ asset('gambar_resto/' . $dataresto->thumbnail) }}"
+                                                    height="150" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <center>
+                                                        <p class="card-title"
+                                                            style="font-size: 1.1vmax; color:black;">
+                                                            <b>{{ $dataresto->namaresto }}</b>
+                                                        </p>
+                                                        <p class="card-text" style="font-size: 0.9vmax; color:black;">
+                                                            {{ $dataresto->address }}</p>
+                                                    </center>
+                                                    {{-- <a href="#" class="btn btn-primary text-white mt-3">Edit</a> --}}
+                                                    <!-- Button trigger modal -->
+                                                    <form action="/deleteResto/{{ $dataresto->id }}" method="POST">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button type="button" class="btn btn-primary mt-3"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#exampleModal{{ $dataresto->id }}">
+                                                            Edit
+                                                        </button>
+                                                        <button type="submit"
+                                                            class="btn btn-danger text-white mt-3">Delete</button>
+                                                    </form>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal{{ $dataresto->id }}""
+                                                        tabindex="-1" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-scrollable"
+                                                            style="margin-top: 15vh">
+                                                            <div class="modal-content">
+                                                                {{-- <div class="modal-header">
+                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                                                        Modal title</h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div> --}}
+                                                                <div class="modal-body">
+                                                                    <form action="/updateResto/{{ $dataresto->id }}"
+                                                                        method="POST" enctype="multipart/form-data"
+                                                                        class="form_iklan">
+                                                                        @csrf
+                                                                        <div class="mb-3 mt-2">
+                                                                            <label for="formGroupExampleInput"
+                                                                                class="form-label">Cafe Or Resto
+                                                                                Name</label>
+                                                                            <input type="text" class="form-control"
+                                                                                id="formGroupExampleInput"
+                                                                                placeholder="Tempat Bersua Cafe..."
+                                                                                name="nama_cafe"
+                                                                                value="{{ $dataresto->namaresto }}">
+                                                                        </div>
 
+                                                                        <div class="mb-3">
+                                                                            <label for="formGroupExampleInput"
+                                                                                class="form-label">District</label>
+                                                                            <select name="kawasan" class="form-select"
+                                                                                aria-label="Default select example">
+                                                                                <option selected hidden disabled>Choose
+                                                                                    District</option>
+                                                                                @foreach ($data as $i)
+                                                                                    <option
+                                                                                        value="{{ $i['name'] }}">
+                                                                                        {{ $i['name'] }}</option>
+                                                                                @endforeach
+
+                                                                                <option selected
+                                                                                    value="{{ $dataresto->district }}">
+                                                                                    {{ $dataresto->district }}
+                                                                                </option>
+
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="formGroupExampleInput"
+                                                                                class="form-label">Address</label>
+                                                                            <textarea type="text" class="form-control" id="formGroupExampleInput"
+                                                                                placeholder="Jalan Tempat Bersua, Bandung..." name="lokasi_cafe">{{ $dataresto->address }}</textarea>
+                                                                        </div>
+                                                                        <div class="row">
+
+                                                                            <div class="col-md-6">
+                                                                                <label for="inputEmail4"
+                                                                                    class="form-label">Open
+                                                                                    Time</label>
+                                                                                <input type="time"
+                                                                                    class="form-control"
+                                                                                    name="waktubuka" id="inputEmail4"
+                                                                                    value="{{ $dataresto->open }}">
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <label for="inputPassword4"
+                                                                                    class="form-label">Closed
+                                                                                    Time</label>
+                                                                                <input type="time"
+                                                                                    class="form-control"
+                                                                                    name="waktututup"
+                                                                                    id="inputPassword4"
+                                                                                    value="{{ $dataresto->close }}">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <label for="inputPassword4"
+                                                                            class="form-label mt-3">Price Range</label>
+                                                                        <div class="row">
+
+                                                                            <div class="col-md-6">
+                                                                                <label for="inputEmail4"
+                                                                                    class="form-label">Start
+                                                                                    From</label>
+                                                                                <div class="input-group mb-2">
+                                                                                    <span
+                                                                                        class="input-group-text">Rp.</span>
+                                                                                    <input type="text"
+                                                                                        class="form-control"
+                                                                                        name="harga1"
+                                                                                        aria-label="Amount (to the nearest dollar)"
+                                                                                        value="{{ $dataresto->price }}">
+                                                                                    <span
+                                                                                        class="input-group-text">.00</span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <label for="inputPassword4"
+                                                                                    class="form-label">Up To</label>
+                                                                                <div class="input-group mb-2">
+                                                                                    <span
+                                                                                        class="input-group-text">Rp.</span>
+                                                                                    <input type="text"
+                                                                                        class="form-control"
+                                                                                        name="harga2"
+                                                                                        aria-label="Amount (to the nearest dollar)"
+                                                                                        value="{{ $dataresto->upto }}">
+                                                                                    <span
+                                                                                        class="input-group-text">.00</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="mb-3">
+                                                                            <label for="formGroupExampleInput"
+                                                                                class="form-label">Recommend</label>
+                                                                            <select name="rekomen" class="form-select"
+                                                                                aria-label="Default select example">
+                                                                                <option selected hidden disabled>Choose
+                                                                                </option>
+                                                                                <option value="ya"
+                                                                                    <?php if ($dataresto->rekomen == 'ya') {
+                                                                                        echo 'selected';
+                                                                                    } ?>>Ya
+                                                                                </option>
+                                                                                <option
+                                                                                    value="tidak"<?php if ($dataresto->rekomen == 'tidak') {
+                                                                                        echo 'selected';
+                                                                                    } ?>>
+                                                                                    Tidak
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                        <label for="inputPassword4"
+                                                                            class="form-label mt-3 mb-0">Add
+                                                                            Photo's</label>
+
+
+                                                                        <div class="input-group mt-3 mb-3">
+                                                                            <input class="form-control"
+                                                                                id="foto_thumb" name="foto_thumb"
+                                                                                type="file"
+                                                                                accept=".jpg, .png, .jpeg">
+                                                                            <label class="input-group-text"
+                                                                                for="inputGroupFile02"
+                                                                                style="width: 10vw;">Thumbnail</label>
+                                                                        </div>
+                                                                        <div class="prev-thumb"></div>
+
+
+                                                                        <div class="input-group mt-3 mb-3">
+                                                                            <input class="form-control"
+                                                                                id="foto_slide" name="foto_slide"
+                                                                                type="file" multiple
+                                                                                accept=".jpg, .png, .jpeg">
+                                                                            <label class="input-group-text"
+                                                                                for="inputGroupFile02"
+                                                                                style="width: 10vw;">
+                                                                                Content</label>
+                                                                        </div>
+                                                                        <div class="prev-slide"></div>
+
+                                                                        <div class="input-group mt-3 mb-3">
+                                                                            <input class="form-control" id="foto_menu"
+                                                                                name="foto_menu" type="file"
+                                                                                multiple accept=".jpg, .png, .jpeg">
+                                                                            <label class="input-group-text"
+                                                                                for="inputGroupFile02"
+                                                                                style="width: 10vw;">
+                                                                                Menu's</label>
+                                                                        </div>
+                                                                        <div class="prev-menu"></div>
+
+
+
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">Save
+                                                                        changes</button>
+                                                                </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </center>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RestoController;
 use App\Models\User;
+use App\Models\resto;
 use Illuminate\Support\Facades\Http;
 
 /*
@@ -30,15 +31,18 @@ Route::put('/logout/{id}', [UserController::class, 'logout']);
 // Admin
 Route::get('/admin', function () {
     $user = User::where('status', 'logged in')->get();
+    $resto = resto::where('status', 'approved')->get();
     $url = "https://kanglerian.github.io/api-wilayah-indonesia/api/districts/3273.json";
     $data = json_decode(file_get_contents($url), true);
-    return view('adminPage',compact('user','data'));
+
+    return view('adminPage',compact('user','data','resto'));
 });
 Route::post('/addAdmin',[UserController::class,'storeAdmin']);
 
 
 // Iklan
 Route::post('/iklanAdmin',[RestoController::class,'store']);
+Route::post('/updateResto/{id}',[RestoController::class,'update']);
 Route::get('/foryou',[RestoController::class, 'index']);
 Route::get('/foryou/{district}',[RestoController::class, 'indexDistrict']);
 
