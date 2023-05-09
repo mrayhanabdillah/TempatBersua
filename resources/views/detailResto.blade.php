@@ -111,7 +111,8 @@
                             <div class="modal-dialog" style="margin-top: 13vh; height: 83vh; width: 50vw;">
                                 <div class="modal-content" style="background-color: #ffffff00">
                                     @foreach (json_decode($detailResto->menu) as $gambar)
-                                        <img class="mb-2" src="{{ asset('gambar_resto/' . $gambar) }}" alt="">
+                                        <img class="mb-2" src="{{ asset('gambar_resto/gambar_menu/' . $gambar) }}"
+                                            alt="">
                                     @endforeach
                                 </div>
                             </div>
