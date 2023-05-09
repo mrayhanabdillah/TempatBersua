@@ -153,6 +153,12 @@ class RestoController extends Controller
         //
     }
 
+    public function showDetail(Request $request, $id){
+        $resto = Resto::all();
+        $detailResto = Resto::find($id);
+        return view('detailResto',compact('detailResto','resto'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

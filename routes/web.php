@@ -54,5 +54,8 @@ Route::post('/ubahStatusPost/{id}', [RestoController::class,'ubahStatusPost']);
 Route::post('/ubahStatusDecline/{id}', [RestoController::class,'ubahStatusDecline']);
 Route::delete('/deleteResto/{id}',[RestoController::class,'deleteResto']);
 
+// Rsto
+Route::get('/detail/{id}', [RestoController::class, 'showDetail']);
+
 
 
